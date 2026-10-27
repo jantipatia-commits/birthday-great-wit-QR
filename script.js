@@ -1,0 +1,150 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: #6b4053;
+  background: linear-gradient(
+    135deg,
+    #f7cbd5,
+    #fff0d9,
+    #d8e9ff
+  );
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  padding: 28px 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.93);
+  border: 2px solid white;
+  border-radius: 28px;
+  box-shadow: 0 18px 55px #a56f8333;
+}
+
+.top {
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #d45d7b;
+}
+
+.balloons {
+  font-size: 35px;
+  margin: 20px 0 5px;
+  animation: bob 2s ease-in-out infinite;
+}
+
+h1 {
+  font-size: clamp(32px, 8vw, 45px);
+  color: #d45578;
+  margin: 8px 0;
+}
+
+h2 {
+  font-size: 23px;
+  color: #76526b;
+  margin: 10px 0;
+}
+
+.divider {
+  color: #e2a84f;
+  margin: 22px;
+  letter-spacing: 7px;
+}
+
+p {
+  line-height: 1.7;
+}
+
+.wish {
+  font-weight: bold;
+  color: #c34f72;
+}
+
+button {
+  border: none;
+  background: #d75e80;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b84467;
+}
+
+.surprise {
+  background: #fff0f4;
+  border-radius: 18px;
+  padding: 15px;
+  margin-top: 15px;
+  animation: appear 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.qr-section {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px dashed #e5b4c5;
+}
+
+.qr-section h3 {
+  font-size: 16px;
+}
+
+#qrcode {
+  display: flex;
+  justify-content: center;
+  margin: 18px auto;
+}
+
+#qrcode img,
+#qrcode canvas {
+  padding: 8px;
+  background: white;
+  border: 1px solid #f0d9e1;
+}
+
+.qr-note {
+  color: #99788c;
+  font-size: 12px;
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 13px;
+  color: #99788c;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

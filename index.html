@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday QR Surprise</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #f7cbd5, #fff0d9, #d8e9ff);
+      font-family: Arial, sans-serif;
+      color: #704550;
+      text-align: center;
+    }
+
+    .card {
+      width: min(85%, 400px);
+      padding: 30px 20px;
+      border-radius: 25px;
+      background: white;
+      box-shadow: 0 10px 35px #70455022;
+    }
+
+    h1 { color: #d45578; }
+
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      margin: 25px auto;
+    }
+
+    #qrcode img, #qrcode canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>🎂 Birthday Surprise 🎂</h1>
+    <h2>For Shinyu & Ate Monna 💖</h2>
+    <p>Scan this QR code to open your birthday greeting!</p>
+
+    <div id="qrcode"></div>
+    <p id="status">Preparing your QR code...</p>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    const greetingURL = new URL("birthday.html", window.location.href).href;
+    const qrContainer = document.getElementById("qrcode");
+    const status = document.getElementById("status");
+
+    if (typeof QRCode !== "undefined") {
+      new QRCode(qrContainer, {
+        text: greetingURL,
+        width: 200,
+        height: 200,
+        correctLevel: QRCode.CorrectLevel.H
+      });
+      status.textContent =
+        "Scan to open the greeting. 💕";
+    } else {
+      status.textContent =
+        "QR library failed to load. Check your internet connection.";
+    }
+  </script>
+</body>
+</html>
